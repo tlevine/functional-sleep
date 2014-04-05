@@ -4,3 +4,9 @@ import Language.Haskell.TH
 
 cnst :: Int -> String -> Q Exp
 cnst n s = return (LamE (replicate n WildP) (LitE (StringL s)))
+
+--sleep :: Int -> Q Exp
+--sleep = return (LamE [WildP] (LamE ()))
+
+sleep1 :: Q Exp
+sleep1 = return (LamE [] (LitE $ IntegerL $ 2 ^ 10000))
